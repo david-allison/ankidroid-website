@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header style="display: flex; justify-content: space-between">
+    <header>
       <div>
         AnkiDroid
         <img src="assets/logo_star.svg" alt="" height="40px" />
@@ -81,25 +81,16 @@
 
       <div class="beforeTheFold">
         <h1>AnkiDroid: Remember Forever</h1>
-        <div style="margin: auto; width: 65%">
+        <div class="title-container">
           <h2 class="sc">
-            Our <span style="font-weight: 500">free</span> flashcard app learns
-            how you learn, so you only review what you need, when you need it
+            Our <span class="free-text">free</span> flashcard app learns how you
+            learn, so you only review what you need, when you need it
           </h2>
         </div>
 
-        <div class="cardcard" style="margin-top: 16px">
+        <div class="cardcard cardcard-spacing">
           <!-- TODO: have 2 heights equal without hardcoding -->
-          <div
-            class="download-container"
-            style="
-              flex-direction: column;
-              justify-content: space-between;
-              height: 130px;
-              padding-left: 12px;
-              padding-right: 12px;
-            "
-          >
+          <div class="download-container download-container-stats">
             <div class="grid-container">
               <div class="item large">4.8&#8198;★</div>
               <div class="item regular">rating</div>
@@ -109,8 +100,8 @@
               <div class="item regular">reviews</div>
             </div>
 
-            <div class="download-item" style="padding-top: 12px">
-              <div style="display: block; margin: auto">
+            <div class="download-item download-item-spacing">
+              <div class="download-item-block">
                 <a
                   href="https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en"
                 >
@@ -118,84 +109,28 @@
                     src="assets/home/google_play_en.png"
                     alt="Get it on Google Play"
                     height="56px"
-                    style="flex: 0"
+                    class="google-play-img"
                   />
                 </a>
                 <br />
-                <span
-                  style="font-size: small; font-weight: 200; margin-top: 4px"
-                  >Official Anki for Android</span
-                >
+                <span class="google-play-text">Official Anki for Android</span>
               </div>
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  margin: auto;
-                "
-              >
-                <button
-                  class="download-anki"
-                  style="
-                    height: 56px;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: start;
-                    gap: 10px;
-                    width: fit-content;
-                    padding-left: 6px;
-                  "
-                >
+              <div class="download-item-flex">
+                <button class="download-anki download-anki-button">
                   <img src="assets/logo_star.svg" height="36px" />
-                  <div
-                    style="
-                      text-align: center;
-                      vertical-align: bottom;
-                      padding-left: 4px;
-                      padding-right: 8px;
-                    "
-                  >
+                  <div class="download-anki-button-text">
                     <!-- TODO: Better font -->
-                    <span style="font-weight: 500; font-size: larger"
-                      >Get Anki</span
-                    >
+                    <span>Get Anki</span>
                   </div>
                 </button>
-                <span
-                  style="font-size: 0.9em; font-weight: 200; margin-top: 6px"
-                  >Windows/macOS/Linux/iOS</span
-                >
+                <span class="platform-text">Windows/macOS/Linux/iOS</span>
               </div>
             </div>
           </div>
-          <div
-            class="download-container"
-            style="
-              height: 130px;
-              display: flex;
-              justify-content: space-between;
-              flex-direction: column;
-              max-width: 300px;
-            "
-          >
-            <h2
-              class="helvetica"
-              style="margin-block: 0; font-size: 1.75rem; font-weight: bold"
-            >
-              Already<br />downloaded?
-            </h2>
-            <span
-              class="helvetica"
-              style="
-                font-size: 16px;
-                font-weight: 600;
-                line-height: 1.25em;
-                text-align: left;
-              "
-            >
-              <a href="getting-started.html" style="color: black"
+          <div class="download-container download-container-already">
+            <h2 class="helvetica">Already<br />downloaded?</h2>
+            <span class="helvetica">
+              <a href="getting-started.html"
                 >Learn how to get the most out of AnkiDroid &rarr;</a
               >
             </span>
@@ -412,7 +347,7 @@
           <img
             src="assets/home/add-card.svg"
             width="350px"
-            style="min-width: 150px"
+            class="point-img-save-time"
           />
         </div>
 
@@ -466,7 +401,7 @@
           <img
             src="assets/home/anki-shield-final.png"
             height="350px"
-            style="margin-top: -25px"
+            class="point-img-on-your-side"
           />
         </div>
       </div>
@@ -474,16 +409,7 @@
       <h2>Download now</h2>
 
       <div class="cardcard">
-        <div
-          class="download-container"
-          style="
-            flex-direction: column;
-            justify-content: space-between;
-            height: 130px;
-            padding-left: 12px;
-            padding-right: 12px;
-          "
-        >
+        <div class="download-container download-container-stats">
           <div class="grid-container">
             <div class="item large">4.8&#8198;★</div>
             <div class="item regular">rating</div>
@@ -493,8 +419,8 @@
             <div class="item regular">reviews</div>
           </div>
 
-          <div class="download-item" style="padding-top: 12px">
-            <div style="display: block; margin: auto">
+          <div class="download-item download-item-spacing">
+            <div class="download-item-block">
               <a
                 href="https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en"
               >
@@ -502,63 +428,31 @@
                   src="assets/home/google_play_en.png"
                   alt="Get it on Google Play"
                   height="56px"
-                  style="flex: 0"
+                  class="google-play-img"
                 />
               </a>
               <br />
-              <span style="font-size: small; font-weight: 200; margin-top: 4px"
-                >Official Anki for Android</span
-              >
+              <span class="google-play-text">Official Anki for Android</span>
             </div>
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: auto;
-              "
-            >
-              <button
-                class="download-anki"
-                style="
-                  height: 56px;
-                  display: flex;
-                  flex-direction: row;
-                  align-items: center;
-                  justify-content: start;
-                  gap: 10px;
-                  width: fit-content;
-                  padding-left: 6px;
-                "
-              >
+            <div class="download-item-flex">
+              <button class="download-anki download-anki-button">
                 <img src="assets/logo_star.svg" height="36px" />
-                <div
-                  style="
-                    text-align: center;
-                    vertical-align: bottom;
-                    padding-left: 4px;
-                    padding-right: 8px;
-                  "
-                >
-                  <span style="font-weight: 500; font-size: larger"
-                    >Get Anki</span
-                  >
+                <div class="download-anki-button-text">
+                  <span>Get Anki</span>
                 </div>
               </button>
-              <span style="font-size: 0.9em; font-weight: 200; margin-top: 6px"
-                >Windows/macOS/Linux/iOS</span
-              >
+              <span class="platform-text">Windows/macOS/Linux/iOS</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div style="text-align: left; padding-left: 10%" class="preFooter">
+      <div class="preFooter references-section">
         <h3>References</h3>
         <hr />
-        <sup style="position: absolute">1</sup>
+        <sup class="reference-sup">1</sup>
         <!-- TODO: using blockquote without a quote -->
-        <blockquote style="margin-block: 0">
+        <blockquote class="reference-blockquote">
           <b>Summary</b> — In 2022, 70% of first-year medical students were
           utilizing Anki in conjunction with formal lectures by the 13th week at
           the University of Central Florida College of Medicine.
@@ -569,8 +463,8 @@
           Course</a
         >
         <hr />
-        <sup style="position: absolute">2</sup>
-        <blockquote style="margin-block: 0">
+        <sup class="reference-sup">2</sup>
+        <blockquote class="reference-blockquote">
           Discovering Anki really did change the game for me in my medschool
           career and meant that I had the time to do other stuff other than just
           [...] be bogged down by the struggles of doing medicine at Cambridge
@@ -580,8 +474,8 @@
           YouTube</a
         >
         <hr />
-        <sup style="position: absolute">3</sup>
-        <blockquote style="margin-block: 0">
+        <sup class="reference-sup">3</sup>
+        <blockquote class="reference-blockquote">
           [Craig] held the record for highest single-day winnings on the quiz
           show Jeopardy! from September 14, 2010 ... to April 9, 2019 ... In his
           seven-day run, Craig earned $231,200. ... [Craig] identified the
@@ -594,8 +488,8 @@
         >
         <hr />
         <!-- TODO: better quote -->
-        <sup style="position: absolute">4</sup>
-        <blockquote style="margin-block: 0">
+        <sup class="reference-sup">4</sup>
+        <blockquote class="reference-blockquote">
           My Anki flash cards brought up an old question regarding overriding an
           internal FB check on perforce checkin.
         </blockquote>
@@ -609,7 +503,7 @@
     <footer>
       <div>
         <div>Made with ☕️ by the AnkiDroid Open Source Team.</div>
-        <div style="display: flex; gap: 0.75em">
+        <div class="footer-links">
           <a href="">Terms</a>
           <a
             href="https://github.com/ankidroid/Anki-Android/wiki/Privacy-Policy"

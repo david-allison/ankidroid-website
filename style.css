@@ -22,6 +22,7 @@ footer {
 header {
   padding: 35px;
   padding-bottom: 15px;
+  padding-left: 60px;
   font-size: x-large;
 }
 main {
@@ -263,4 +264,144 @@ h2.helvetica,
 
 .testimonials > div {
   width: fit-content;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Main content area styles */
+.title-container {
+  margin: auto;
+  width: 65%;
+}
+
+.title-container .free-text {
+  font-weight: 500;
+}
+
+.cardcard-spacing {
+  margin-top: 16px;
+}
+
+/* Download container variants */
+.download-container-stats {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.download-container-already {
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.download-container-already h2 {
+  margin-block: 0;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.download-container-already span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25em;
+  text-align: left;
+}
+
+.download-container-already a {
+  color: black;
+}
+
+/* Download item styles */
+.download-item-spacing {
+  padding-top: 12px;
+}
+
+.download-item-block {
+  display: block;
+  margin: auto;
+}
+
+.download-item-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.google-play-img {
+  flex: 0;
+}
+
+.google-play-text {
+  font-size: small;
+  font-weight: 200;
+  margin-top: 4px;
+}
+
+/* Download button styles */
+.download-anki-button {
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  width: fit-content;
+  padding-left: 6px;
+}
+
+.download-anki-button-text {
+  text-align: center;
+  vertical-align: bottom;
+  padding-left: 4px;
+  padding-right: 8px;
+}
+
+.download-anki-button-text span {
+  font-weight: 500;
+  font-size: larger;
+}
+
+.platform-text {
+  font-size: 0.9em;
+  font-weight: 200;
+  margin-top: 6px;
+}
+
+/* Point images with special sizing */
+.point-img-save-time {
+  min-width: 150px;
+}
+
+.point-img-on-your-side {
+  margin-top: -25px;
+}
+
+/* Footer styles */
+.footer-links {
+  display: flex;
+  gap: 0.75em;
+}
+
+/* References section */
+.references-section {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.reference-sup {
+  position: absolute;
+}
+
+.reference-blockquote {
+  margin-block: 0;
 }
