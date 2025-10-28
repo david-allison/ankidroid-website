@@ -329,6 +329,11 @@ header {
   line-height: 0;
 }
 
+.download-item-flex > a.download-anki-button {
+  display: flex;
+  line-height: normal;
+}
+
 .google-play-img {
   flex: 0;
 }
@@ -349,7 +354,7 @@ header {
   justify-content: start;
   gap: 10px;
   width: fit-content;
-  padding-left: 6px;
+  padding: 0 8px;
   text-decoration: none;
 }
 
