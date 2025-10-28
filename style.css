@@ -1,9 +1,6 @@
 body {
   padding: 0;
   margin: 0;
-}
-
-body {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -54,10 +51,6 @@ menu a {
   text-decoration: none;
   padding: 16px;
   color: black;
-}
-
-.beforeTheFold {
-  padding-bottom: 300px;
 }
 
 main .download-container {
@@ -114,7 +107,7 @@ main .chip {
 
   padding-left: 12px;
   padding-right: 12px;
-  vertical-align: center;
+  vertical-align: middle;
   user-select: none;
 }
 
@@ -187,14 +180,9 @@ footer img {
   margin-bottom: 15px;
 }
 
-header,
-footer {
-  padding-left: 60px;
-  padding-right: 36px;
-}
-
 .beforeTheFold {
   padding-top: 40px;
+  padding-bottom: 300px;
   background-image: linear-gradient(
     rgba(68, 181, 245, 0.5),
     rgb(254, 254, 254)
@@ -233,11 +221,14 @@ footer {
 }
 
 .grid-container .item {
+  font-family: "Nunito", sans-serif;
   line-height: 1.06em;
   text-align: center;
   width: fit-content;
-  font-weight: bold !important;
+  font-weight: bold;
+  letter-spacing: 0.1px;
 }
+
 .grid-container .item.regular {
   font-size: larger;
 }
@@ -247,8 +238,7 @@ footer {
 }
 
 /** TODO: Rename */
-h2.helvetica,
-.grid-container .item {
+h2.helvetica {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   letter-spacing: 0.1px;
