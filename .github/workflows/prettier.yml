@@ -1,0 +1,24 @@
+name: Check Code Style
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Install Prettier
+        run: npm install --global prettier@3.6.2
+
+      - name: Run Prettier
+        run: prettier --check "**/*.{html,css,js,json}"
