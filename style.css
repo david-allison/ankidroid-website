@@ -165,10 +165,9 @@ footer div {
 .testimonials > div {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
 }
-
 footer div * {
   justify-self: center;
   align-self: center;
@@ -404,4 +403,66 @@ header {
 
 .reference-blockquote {
   margin-block: 0;
+}
+
+/* Inline reference popover styles */
+.inline-popover {
+  position: absolute;
+  margin: 0;
+  inset: auto;
+  bottom: anchor(top);
+  left: anchor(left);
+  max-width: 24rem;
+  padding: 12px;
+}
+
+.inline-popover:popover-open {
+  display: grid;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  opacity: 1;
+  transition: opacity 0.2s;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+span[popovertarget] {
+  cursor: pointer;
+}
+
+/* Anchor for popover */
+span[popovertarget="ref-1"] {
+  anchor-name: --ref-1;
+}
+
+span[popovertarget="ref-2"] {
+  anchor-name: --ref-2;
+}
+
+span[popovertarget="ref-3"] {
+  anchor-name: --ref-3;
+}
+
+span[popovertarget="ref-4"] {
+  anchor-name: --ref-4;
+}
+
+/* Positioning for popovers based on anchor */
+#ref-1 {
+  position-anchor: --ref-1;
+}
+
+#ref-2 {
+  position-anchor: --ref-2;
+}
+
+#ref-3 {
+  position-anchor: --ref-3;
+}
+
+#ref-4 {
+  position-anchor: --ref-4;
 }

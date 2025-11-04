@@ -56,6 +56,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Polyfill for older browsers that don't support CSS anchor positioning -->
+    <script type="module">
+      if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -172,11 +179,22 @@
             <p>
               <!-- TODO: make the references popup Wikipedia style to not distract the user -->
               <span>
-                An estimated 70% of US medical students use Anki<sup>1</sup>.
-                Whether you want to rank 1st at Cambridge<sup>2</sup>, win over
-                $200,000 breaking quiz show records<sup>3</sup>, make a few
-                video games<sup>4</sup> or just ace your French test, you're in
-                good company.
+                An estimated 70% of US medical students use Anki
+                <span popovertarget="ref-1">
+                  <sup class="inline-reference">1 </sup>
+                </span>
+                . Whether you want to rank 1st at Cambridge<span
+                  popovertarget="ref-2"
+                >
+                  <sup class="inline-reference">2 </sup> </span
+                >, win over $200,000 breaking quiz show records<span
+                  popovertarget="ref-3"
+                >
+                  <sup class="inline-reference">3 </sup> </span
+                >, make a few video games<span popovertarget="ref-4">
+                  <sup class="inline-reference">4 </sup>
+                </span>
+                or just ace your French test, you're in good company.
               </span>
             </p>
             <span>
@@ -502,6 +520,50 @@
         >
         - Developer of Doom, Quake etc... Former CTO, Oculus VR
         <hr />
+
+        <!-- Hidden popovers for references -->
+        <span class="inline-popover" popover="auto" id="ref-1">
+          <b>Summary</b> — In 2022, 70% of first-year medical students were
+          utilizing Anki in conjunction with formal lectures by the 13th week at
+          the University of Central Florida College of Medicine.
+
+          <a href="https://doi.org/10.7759/cureus.23530"
+            >Harris, D. M., & Chiang, M. (2022). An Analysis of Anki Usage and
+            Strategy of First-Year Medical Students in a Structure and Function
+            Course</a
+          ></span
+        >
+        <span class="inline-popover" popover="auto" id="ref-2">
+          Discovering Anki really did change the game for me in my medschool
+          career and meant that I had the time to do other stuff other than just
+          [...] be bogged down by the struggles of doing medicine at Cambridge
+
+          <a href="https://www.youtube.com/watch?v=_5nw6gLRe34#t=3m20s"
+            >Ali Abdaal: How I Ranked 1st at Cambridge University - My Secret |
+            YouTube</a
+          ></span
+        >
+        <span class="inline-popover" popover="auto" id="ref-3">
+          [Craig] held the record for highest single-day winnings on the quiz
+          show Jeopardy! from September 14, 2010 ... to April 9, 2019 ... In his
+          seven-day run, Craig earned $231,200. ... [Craig] identified the
+          topics most likely to occur in game questions, then used the spaced
+          repetition program Anki for memorization
+
+          <a
+            href="https://en.wikipedia.org/w/index.php?title=Roger_Craig_(Jeopardy!_contestant)&oldid=1219919600#Preparation"
+            >Roger Craig | Wikipedia</a
+          ></span
+        >
+        <span class="inline-popover" popover="auto" id="ref-4">
+          My Anki flash cards brought up an old question regarding overriding an
+          internal FB check on perforce checkin.
+
+          <a href="https://x.com/ID_AA_Carmack/status/1324090557954695171"
+            >John Carmack on X</a
+          >
+          - Developer of Doom, Quake etc... Former CTO, Oculus VR</span
+        >
       </div>
     </main>
     <footer>
@@ -522,5 +584,38 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Add hover functionality to popover triggers similar to Wikipedia
+      document.querySelectorAll("[popovertarget]").forEach((trigger) => {
+        const popoverId = trigger.getAttribute("popovertarget");
+        const popover = document.getElementById(popoverId);
+
+        if (popover) {
+          let hideTimeout;
+
+          trigger.addEventListener("mouseenter", () => {
+            clearTimeout(hideTimeout);
+            popover.showPopover();
+          });
+
+          // Keep popover open when hovering over it
+          popover.addEventListener("mouseenter", () => {
+            clearTimeout(hideTimeout);
+          });
+
+          trigger.addEventListener("mouseleave", () => {
+            hideTimeout = setTimeout(() => {
+              popover.hidePopover();
+            }, 200);
+          });
+
+          popover.addEventListener("mouseleave", () => {
+            hideTimeout = setTimeout(() => {
+              popover.hidePopover();
+            }, 200);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
