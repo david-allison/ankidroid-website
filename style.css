@@ -429,4 +429,5 @@ header {
 
 span[popovertarget] {
   cursor: pointer;
+  white-space: nowrap;
 }
