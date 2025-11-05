@@ -412,6 +412,11 @@ header {
   max-width: 24rem;
   padding: 12px;
   background-color: white;
+  text-wrap: pretty;
+}
+
+.inline-popover a {
+  margin-top: 6px;
 }
 
 .inline-popover:popover-open {
