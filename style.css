@@ -409,11 +409,9 @@ header {
 .inline-popover {
   position: absolute;
   margin: 0;
-  inset: auto;
-  bottom: anchor(top);
-  left: anchor(left);
   max-width: 24rem;
   padding: 12px;
+  background-color: white;
 }
 
 .inline-popover:popover-open {
@@ -431,38 +429,4 @@ header {
 
 span[popovertarget] {
   cursor: pointer;
-}
-
-/* Anchor for popover */
-span[popovertarget="ref-1"] {
-  anchor-name: --ref-1;
-}
-
-span[popovertarget="ref-2"] {
-  anchor-name: --ref-2;
-}
-
-span[popovertarget="ref-3"] {
-  anchor-name: --ref-3;
-}
-
-span[popovertarget="ref-4"] {
-  anchor-name: --ref-4;
-}
-
-/* Positioning for popovers based on anchor */
-#ref-1 {
-  position-anchor: --ref-1;
-}
-
-#ref-2 {
-  position-anchor: --ref-2;
-}
-
-#ref-3 {
-  position-anchor: --ref-3;
-}
-
-#ref-4 {
-  position-anchor: --ref-4;
 }

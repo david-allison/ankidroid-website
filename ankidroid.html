@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -56,13 +56,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Polyfill for older browsers that don't support CSS anchor positioning -->
-    <script type="module">
-      if (!("anchorName" in document.documentElement.style)) {
-        import("https://unpkg.com/@oddbird/css-anchor-positioning");
-      }
-    </script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -584,38 +578,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      // Add hover functionality to popover triggers similar to Wikipedia
-      document.querySelectorAll("[popovertarget]").forEach((trigger) => {
-        const popoverId = trigger.getAttribute("popovertarget");
-        const popover = document.getElementById(popoverId);
-
-        if (popover) {
-          let hideTimeout;
-
-          trigger.addEventListener("mouseenter", () => {
-            clearTimeout(hideTimeout);
-            popover.showPopover();
-          });
-
-          // Keep popover open when hovering over it
-          popover.addEventListener("mouseenter", () => {
-            clearTimeout(hideTimeout);
-          });
-
-          trigger.addEventListener("mouseleave", () => {
-            hideTimeout = setTimeout(() => {
-              popover.hidePopover();
-            }, 200);
-          });
-
-          popover.addEventListener("mouseleave", () => {
-            hideTimeout = setTimeout(() => {
-              popover.hidePopover();
-            }, 200);
-          });
-        }
-      });
-    </script>
   </body>
 </html>
