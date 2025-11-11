@@ -259,6 +259,28 @@ h2.helvetica {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  border-radius: 3px;
 }
 
 /* Main content area styles */
@@ -497,5 +519,34 @@ span[popovertarget] {
 
   header {
     padding: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1000;
+  }
+
+  menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(68, 181, 245, 0.98);
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
+  }
+
+  menu a {
+    display: block;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-toggle:checked ~ menu {
+    max-height: 300px;
   }
 }
