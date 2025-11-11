@@ -435,3 +435,67 @@ header {
 span[popovertarget] {
   white-space: nowrap;
 }
+
+@media (max-width: 600px) {
+  main .point,
+  main .point:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  main .point {
+    gap: 16px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+  }
+
+  main .point img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .sc {
+    font-size: 1.5rem;
+  }
+
+  .title-container {
+    width: 90%;
+  }
+
+  .cardcard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .points {
+    padding-top: 28px;
+  }
+
+  main .download-container {
+    max-width: 80%;
+    min-width: 80%;
+  }
+
+  .beforeTheFold {
+    padding-top: 16px;
+  }
+  .beforeTheFold h1 {
+    line-height: 1.2em;
+  }
+
+  header {
+    padding: 20px;
+  }
+}
