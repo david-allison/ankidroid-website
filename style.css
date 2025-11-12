@@ -427,6 +427,7 @@ header {
 .point-img {
   width: 100%;
   height: auto;
+  max-width: 500px;
 }
 
 .point-img-on-your-side {
