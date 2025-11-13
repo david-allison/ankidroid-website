@@ -64,8 +64,10 @@ main .download-container {
 
 .download-container .download-item {
   display: flex;
+  gap: 12px 0;
   align-content: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 main .point:nth-of-type(even) {
