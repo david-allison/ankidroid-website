@@ -162,6 +162,8 @@ footer div {
   justify-content: center;
   gap: 32px;
   margin-bottom: 8px;
+  flex-wrap: wrap;
+  padding: 0 50px;
 }
 
 .cardcard > div,
@@ -498,6 +500,10 @@ span[popovertarget] {
     flex-direction: column;
   }
 
+  .cardcard {
+    padding: 0px;
+  }
+
   main .point {
     gap: 16px;
     padding-bottom: 24px;
@@ -589,5 +595,13 @@ span[popovertarget] {
   main .point {
     gap: 45px;
     padding: 0px 50px 100px;
+  }
+
+  main .download-container {
+    width: 100%;
+  }
+
+  .download-container-already {
+    max-width: none;
   }
 }
