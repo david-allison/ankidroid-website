@@ -317,13 +317,13 @@ header {
 .download-container-stats {
   flex-direction: column;
   justify-content: space-between;
-  height: 130px;
+  min-height: 130px;
   padding-left: 12px;
   padding-right: 12px;
 }
 
 .download-container-already {
-  height: 130px;
+  min-height: 130px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -545,11 +545,6 @@ span[popovertarget] {
     padding-top: 28px;
   }
 
-  main .download-container {
-    max-width: 80%;
-    min-width: 80%;
-  }
-
   .beforeTheFold {
     padding-top: 16px;
   }
@@ -598,7 +593,8 @@ span[popovertarget] {
   }
 
   main .download-container {
-    width: 100%;
+    max-width: 500px;
+    width: 80%;
   }
 
   .download-container-already {
