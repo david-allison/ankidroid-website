@@ -570,10 +570,14 @@ span[popovertarget] {
   .beforeTheFold {
     padding-top: 16px;
   }
+
   .beforeTheFold h1 {
     line-height: 1.2em;
   }
+}
 
+/* Responsive header styles */
+@media (max-width: 800px) {
   header {
     padding: 20px;
   }
