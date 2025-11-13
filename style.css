@@ -22,6 +22,7 @@ header {
   padding-left: 60px;
   font-size: x-large;
 }
+
 main {
   text-align: center;
 }
@@ -72,6 +73,11 @@ main .download-container {
 
 main .point:nth-of-type(even) {
   flex-direction: row-reverse;
+}
+
+.content {
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 main .point {
