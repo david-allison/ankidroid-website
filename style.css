@@ -584,3 +584,10 @@ span[popovertarget] {
     max-height: 300px;
   }
 }
+
+@media (max-width: 1000px) {
+  main .point {
+    gap: 45px;
+    padding: 0px 50px 100px;
+  }
+}
