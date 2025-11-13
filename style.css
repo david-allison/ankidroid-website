@@ -196,6 +196,10 @@ footer img {
   );
 }
 
+.page-heading {
+  text-wrap: balance;
+}
+
 .img-block {
   margin-top: -260px;
   padding-bottom: 40px;
