@@ -510,6 +510,14 @@ span[popovertarget] {
     padding: 0px;
   }
 
+  .grid-container {
+    gap: 3px 8px;
+  }
+
+  .grid-container .item.large {
+    font-size: larger;
+  }
+
   main .point {
     gap: 16px;
     padding-bottom: 24px;
