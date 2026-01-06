@@ -73,3 +73,13 @@
     }
   });
 })();
+
+// Redirect outdated manual links with fragments to the new manual location
+(function () {
+  const hash = window.location.hash;
+  const CURRENT_MANUAL_URL = "https://docs.ankidroid.org/";
+
+  if (hash.substring(1) && !document.getElementById(hash.substring(1))) {
+    window.location.replace(CURRENT_MANUAL_URL + hash);
+  }
+})();
