@@ -57,7 +57,7 @@ menu a {
 }
 
 main .download-container {
-  font-family: Arial;
+  font-family: Arial, serif;
   border: 1px solid black;
   padding: 22px;
   width: fit-content;
@@ -625,5 +625,27 @@ span[popovertarget] {
 
   .download-container-already {
     max-width: none;
+  }
+}
+
+.point-img-save-time{
+  height: min(35vh, 30vw);
+  width: fit-content;
+  @media (min-width: 601px){
+    padding-top: 5vh;
+  }
+}
+.point-img-globe{
+  @media (min-width: 701px){
+    height: min(27vh, 23vw);
+    width: fit-content;
+    padding-top: 3vh;
+  }
+}
+.point-img-on-your-side {
+  @media(min-width: 701px){
+    height: min(35vh, 30vw);
+    width: fit-content;
+    padding-top: 3vh;
   }
 }
