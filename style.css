@@ -628,22 +628,22 @@ span[popovertarget] {
   }
 }
 
-.point-img-save-time{
+.point-img-save-time {
   height: min(35vh, 30vw);
   width: fit-content;
-  @media (min-width: 601px){
+  @media (min-width: 601px) {
     padding-top: 5vh;
   }
 }
-.point-img-globe{
-  @media (min-width: 701px){
+.point-img-globe {
+  @media (min-width: 701px) {
     height: min(27vh, 23vw);
     width: fit-content;
     padding-top: 3vh;
   }
 }
 .point-img-on-your-side {
-  @media(min-width: 701px){
+  @media (min-width: 701px) {
     height: min(35vh, 30vw);
     width: fit-content;
     padding-top: 3vh;
