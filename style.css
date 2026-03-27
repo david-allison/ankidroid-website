@@ -92,7 +92,7 @@ main .point {
 }
 
 .points > div:last-child {
-  padding-bottom: 0;
+  padding-bottom: 5vh;
 }
 
 .point div {
@@ -396,17 +396,19 @@ header {
 
 /* Point images with special sizing */
 .point-img {
-  width: 100%;
+  width: 100%; /*changing this will cause spacing issues between 600-850px view width*/
   height: auto;
-  max-width: 500px;
+  max-width: 28rem;
+  object-fit: contain;
 }
 
-.point-img-on-your-side {
-  margin-top: -25px;
+.point-img-periphery {
+  max-width: 16rem;
 }
 
 .point-img-container {
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -463,6 +465,59 @@ span[popovertarget] {
   white-space: nowrap;
 }
 
+@media (max-width: 1000px) {
+  main .point {
+    gap: 45px;
+    padding: 0px 50px 100px;
+  }
+
+  main .download-container {
+    max-width: 500px;
+    width: 80%;
+  }
+
+  .download-container-already {
+    max-width: none;
+  }
+}
+
+/* Responsive header styles */
+@media (max-width: 800px) {
+  header {
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1000;
+  }
+
+  menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(68, 181, 245, 0.98);
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
+  }
+
+  menu a {
+    display: block;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-toggle:checked ~ menu {
+    max-height: 300px;
+  }
+}
+
+/*this needs to be below the 1000px media to ensure it takes priority in padding calculation*/
 @media (max-width: 600px) {
   main .point,
   main .point:nth-of-type(even) {
@@ -528,57 +583,5 @@ span[popovertarget] {
 
   .beforeTheFold h1 {
     line-height: 1.2em;
-  }
-}
-
-/* Responsive header styles */
-@media (max-width: 800px) {
-  header {
-    padding: 20px;
-  }
-
-  .hamburger {
-    display: flex;
-    z-index: 1000;
-  }
-
-  menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgba(68, 181, 245, 0.98);
-    flex-direction: column;
-    width: 200px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    border-radius: 0 0 8px 8px;
-  }
-
-  menu a {
-    display: block;
-    padding: 16px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .menu-toggle:checked ~ menu {
-    max-height: 300px;
-  }
-}
-
-@media (max-width: 1000px) {
-  main .point {
-    gap: 45px;
-    padding: 0px 50px 100px;
-  }
-
-  main .download-container {
-    max-width: 500px;
-    width: 80%;
-  }
-
-  .download-container-already {
-    max-width: none;
   }
 }
