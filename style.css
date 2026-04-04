@@ -1,3 +1,29 @@
+:root {
+  --body-bg-color: rgb(254, 254, 254);
+  --header-footer-bg-color: rgba(68, 181, 245, 0.5);
+  --menu-link-color: black;
+  --menu-dl-container-color: black;
+  --prefooter-gradient-color: linear-gradient(
+    rgb(254, 254, 254),
+    rgba(68, 181, 245, 0.5)
+  );
+  --before-the-fold-color: linear-gradient(
+    rgba(68, 181, 245, 0.5),
+    rgb(254, 254, 254)
+  );
+  --cardcard-testimonial-bg-color: rgba(255, 255, 255, 0.8);
+  --cardcard-testimonial-border-color: rgba(0, 0, 0, 0.12);
+  --cardcard-testimonial-box-shadow: rgba(0, 0, 0, 0.1);
+  --get-anki-text-color: white;
+  --hamburger-span-color: rgba(0, 0, 0, 0.7);
+  --download-container-already: black;
+  --inline-popover-color: white;
+  --inline-popover-open-border-color: rgba(0, 0, 0, 0.3);
+  --inline-popover-open-box-shadow: rgba(0, 0, 0, 0.2);
+  --800px-menu-bg-color: rgba(68, 181, 245, 0.98);
+  --800px-menu-box-shadow: rgba(0, 0, 0, 0.15);
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -5,14 +31,14 @@ body {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  background-color: rgb(254, 254, 254);
+  background-color: var(--body-bg-color);
 }
 
 header,
 footer {
   padding-left: 60px;
   padding-right: 36px;
-  background-color: rgba(68, 181, 245, 0.5);
+  background-color: var(--header-footer-bg-color);
   margin-block-start: 0;
 }
 
@@ -53,12 +79,12 @@ menu {
 menu a {
   text-decoration: none;
   padding: 16px;
-  color: black;
+  color: var(--menu-link-color);
 }
 
 main .download-container {
   font-family: Arial;
-  border: 1px solid black;
+  border: 1px solid var(--menu-dl-container-color);
   padding: 22px;
   width: fit-content;
   font-weight: bold;
@@ -114,15 +140,8 @@ sup {
 }
 
 .preFooter {
-  background-image: linear-gradient(
-    rgb(254, 254, 254),
-    rgba(68, 181, 245, 0.5)
-  );
+  background-image: var(--prefooter-gradient-color);
   padding-bottom: 15px;
-}
-
-footer {
-  background-color: rgba(68, 181, 245, 0.5);
 }
 
 footer div {
@@ -144,9 +163,9 @@ footer div {
 
 .cardcard > div,
 .testimonials > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--cardcard-testimonial-bg-color);
+  border: 1px solid var(--cardcard-testimonial-border-color);
+  box-shadow: 0 2px 10px var(--cardcard-testimonial-box-shadow);
   border-radius: 12px;
 }
 
@@ -164,10 +183,7 @@ footer img {
 .beforeTheFold {
   padding-top: 40px;
   padding-bottom: 300px;
-  background-image: linear-gradient(
-    rgba(68, 181, 245, 0.5),
-    rgb(254, 254, 254)
-  );
+  background-image: var(--before-the-fold-color);
 }
 
 .page-heading {
@@ -186,7 +202,7 @@ footer img {
 
 .download-anki {
   background-color: black;
-  color: white;
+  color: var(--get-anki-text-color);
   font-weight: 300;
   border-radius: 6px;
 }
@@ -263,7 +279,7 @@ header {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--hamburger-span-color);
   transition: all 0.3s ease;
   border-radius: 3px;
 }
@@ -313,7 +329,7 @@ header {
 }
 
 .download-container-already a {
-  color: black;
+  color: var(--download-container-already);
 }
 
 /* Download item styles */
@@ -440,7 +456,7 @@ header {
   margin: 0;
   max-width: 24rem;
   padding: 12px;
-  background-color: white;
+  background-color: var(--inline-popover-color);
   text-wrap: pretty;
 }
 
@@ -450,8 +466,8 @@ header {
 
 .inline-popover:popover-open {
   display: grid;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--inline-popover-open-border-color);
+  box-shadow: 0px 0px 16px var(--inline-popover-open-box-shadow);
   font-size: 1em;
   opacity: 1;
   transition: opacity 0.2s;
@@ -496,13 +512,13 @@ span[popovertarget] {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: rgba(68, 181, 245, 0.98);
+    background-color: var(--800px-menu-bg-color);
     flex-direction: column;
     width: 200px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px var(--800px-menu-box-shadow);
     border-radius: 0 0 8px 8px;
   }
 
