@@ -162,3 +162,25 @@
     window.location.replace(CURRENT_MANUAL_URL + fullHash);
   }
 })();
+
+// Theme toggle (overrides OS preference for current session only)
+(function () {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+
+  const root = document.documentElement;
+
+  toggle.addEventListener("click", function () {
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const current = root.getAttribute("data-theme");
+    var next;
+    if (current) {
+      next = current === "dark" ? "light" : "dark";
+    } else {
+      next = prefersDark ? "light" : "dark";
+    }
+    root.setAttribute("data-theme", next);
+  });
+})();
