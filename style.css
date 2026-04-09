@@ -225,6 +225,46 @@ footer img {
   height: auto;
 }
 
+/* Hero tablet: swap light/dark variants based on the manual theme toggle */
+.img-block img.hero-tablet {
+  width: 75%;
+  max-width: 1100px;
+  height: auto;
+}
+
+.hero-tablet-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .hero-tablet-light {
+  display: none;
+}
+
+html[data-theme="dark"] .hero-tablet-dark {
+  display: inline-block;
+}
+
+/* Responsive sizing for smaller laptops and tablet viewports */
+@media (max-width: 1000px) {
+  .img-block {
+    margin-top: -180px;
+  }
+  .img-block img.hero-tablet {
+    width: 85%;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 800px) {
+  .img-block {
+    margin-top: -120px;
+  }
+  .img-block img.hero-tablet {
+    width: 90%;
+    max-width: 560px;
+  }
+}
+
 .download-anki {
   background-color: var(--download-anki-bg-color);
   color: var(--get-anki-text-color);
@@ -705,9 +745,17 @@ span[popovertarget] {
 
   .beforeTheFold {
     padding-top: 16px;
+    /* Hero tablet is hidden on phones, so collapse the 300px slot that was
+       reserved for it overlapping via .img-block's negative margin */
+    padding-bottom: 40px;
   }
 
   .beforeTheFold h1 {
     line-height: 1.2em;
+  }
+
+  .img-block {
+    margin-top: 0;
+    padding-bottom: 0;
   }
 }
