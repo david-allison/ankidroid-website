@@ -22,6 +22,30 @@
   --inline-popover-open-box-shadow: rgba(0, 0, 0, 0.2);
   --800px-menu-bg-color: rgba(68, 181, 245, 0.98);
   --800px-menu-box-shadow: rgba(0, 0, 0, 0.15);
+  --text-color: #111;
+  --download-anki-bg-color: black;
+}
+
+html[data-theme="dark"] {
+  --body-bg-color: #121212;
+  --header-footer-bg-color: rgba(20, 60, 95, 0.85);
+  --menu-link-color: #f0f0f0;
+  --menu-dl-container-color: #e0e0e0;
+  --prefooter-gradient-color: linear-gradient(#121212, rgba(20, 60, 95, 0.85));
+  --before-the-fold-color: linear-gradient(rgba(20, 60, 95, 0.85), #121212);
+  --cardcard-testimonial-bg-color: rgba(40, 40, 40, 0.85);
+  --cardcard-testimonial-border-color: rgba(255, 255, 255, 0.12);
+  --cardcard-testimonial-box-shadow: rgba(0, 0, 0, 0.5);
+  --get-anki-text-color: white;
+  --hamburger-span-color: rgba(255, 255, 255, 0.8);
+  --download-container-already: #e0e0e0;
+  --inline-popover-color: #2a2a2a;
+  --inline-popover-open-border-color: rgba(255, 255, 255, 0.25);
+  --inline-popover-open-box-shadow: rgba(0, 0, 0, 0.6);
+  --800px-menu-bg-color: rgba(20, 60, 95, 0.98);
+  --800px-menu-box-shadow: rgba(0, 0, 0, 0.5);
+  --text-color: #e8e8e8;
+  --download-anki-bg-color: #1e1e1e;
 }
 
 body {
@@ -32,6 +56,7 @@ body {
   font-weight: 200;
   font-style: normal;
   background-color: var(--body-bg-color);
+  color: var(--text-color);
 }
 
 header,
@@ -200,8 +225,48 @@ footer img {
   height: auto;
 }
 
+/* Hero tablet: swap light/dark variants based on the manual theme toggle */
+.img-block img.hero-tablet {
+  width: 75%;
+  max-width: 1100px;
+  height: auto;
+}
+
+.hero-tablet-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .hero-tablet-light {
+  display: none;
+}
+
+html[data-theme="dark"] .hero-tablet-dark {
+  display: inline-block;
+}
+
+/* Responsive sizing for smaller laptops and tablet viewports */
+@media (max-width: 1000px) {
+  .img-block {
+    margin-top: -180px;
+  }
+  .img-block img.hero-tablet {
+    width: 85%;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 800px) {
+  .img-block {
+    margin-top: -120px;
+  }
+  .img-block img.hero-tablet {
+    width: 90%;
+    max-width: 560px;
+  }
+}
+
 .download-anki {
-  background-color: black;
+  background-color: var(--download-anki-bg-color);
   color: var(--get-anki-text-color);
   font-weight: 300;
   border-radius: 6px;
@@ -434,6 +499,91 @@ header {
 .footer-links {
   display: flex;
   gap: 0.75em;
+  align-items: center;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* Simple sun/moon icon button — swaps the SVG based on current theme */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  flex: 0 0 auto;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+  transform: scale(1.08);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.theme-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  pointer-events: none;
+}
+
+.theme-icon-sun {
+  mask-image: url("assets/home/light_mode.svg");
+  -webkit-mask-image: url("assets/home/light_mode.svg");
+}
+
+.theme-icon-moon {
+  mask-image: url("assets/home/dark_mode.svg");
+  -webkit-mask-image: url("assets/home/dark_mode.svg");
+}
+
+/* Light mode shows the moon (click it to go dark) */
+.theme-icon-sun {
+  display: none;
+}
+
+/* Dark mode shows the sun (click it to go light) */
+html[data-theme="dark"] .theme-icon-sun {
+  display: inline-block;
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+/* Adapt the device-templates SVG (hardcoded white screens / dark frames) for dark mode */
+html[data-theme="dark"] .point-img-device-templates {
+  filter: invert(0.88) hue-rotate(180deg);
 }
 
 /* References section */
@@ -595,9 +745,17 @@ span[popovertarget] {
 
   .beforeTheFold {
     padding-top: 16px;
+    /* Hero tablet is hidden on phones, so collapse the 300px slot that was
+       reserved for it overlapping via .img-block's negative margin */
+    padding-bottom: 40px;
   }
 
   .beforeTheFold h1 {
     line-height: 1.2em;
+  }
+
+  .img-block {
+    margin-top: 0;
+    padding-bottom: 0;
   }
 }

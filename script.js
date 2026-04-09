@@ -162,3 +162,28 @@
     window.location.replace(CURRENT_MANUAL_URL + fullHash);
   }
 })();
+
+// Theme toggle (night mode)
+(function () {
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+
+  const root = document.documentElement;
+
+  function syncAriaPressed() {
+    const isDark = root.getAttribute("data-theme") === "dark";
+    toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+  }
+
+  syncAriaPressed();
+
+  toggle.addEventListener("click", function () {
+    const current = root.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch (e) {}
+    syncAriaPressed();
+  });
+})();

@@ -55,6 +55,18 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = stored || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -184,12 +196,24 @@
 
 			-->
       <div class="content">
-        <div class="img-block">
+        <div class="img-block hide-on-mobile">
           <img
-            src="assets/home/tablet.webp"
-            width="2560"
-            height="1600"
-            alt="Tablet displaying AnkiDroid deck selection screen"
+            src="assets/home/pixel_tablet_light.png"
+            width="2798"
+            height="1837"
+            alt="Pixel Tablet displaying AnkiDroid deck selection screen"
+            class="hero-tablet hero-tablet-light"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <img
+            src="assets/home/pixel_tablet.png"
+            width="2798"
+            height="1837"
+            alt=""
+            aria-hidden="true"
+            class="hero-tablet hero-tablet-dark"
+            decoding="async"
           />
         </div>
 
@@ -525,6 +549,17 @@
             href="https://github.com/ankidroid/Anki-Android/wiki/Privacy-Policy"
             >Privacy Policy</a
           >
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            title="Toggle dark mode"
+          >
+            <span class="theme-icon theme-icon-sun" aria-hidden="true"></span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true"></span>
+          </button>
           <a href="https://github.com/ankidroid/Anki-Android"
             ><img
               src="assets/github-mark.svg"
