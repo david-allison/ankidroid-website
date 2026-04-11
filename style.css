@@ -22,6 +22,34 @@
   --inline-popover-open-box-shadow: rgba(0, 0, 0, 0.2);
   --800px-menu-bg-color: rgba(68, 181, 245, 0.98);
   --800px-menu-box-shadow: rgba(0, 0, 0, 0.15);
+  --text-color: #111;
+  --download-anki-bg-color: black;
+  --link-color: #0b57a0;
+  --link-color-visited: #4a2f7a;
+}
+
+html[data-theme="dark"] {
+  --body-bg-color: #121212;
+  --header-footer-bg-color: rgba(20, 60, 95, 0.85);
+  --menu-link-color: #f0f0f0;
+  --menu-dl-container-color: #e0e0e0;
+  --prefooter-gradient-color: linear-gradient(#121212, rgba(20, 60, 95, 0.85));
+  --before-the-fold-color: linear-gradient(rgba(20, 60, 95, 0.85), #121212);
+  --cardcard-testimonial-bg-color: rgba(40, 40, 40, 0.85);
+  --cardcard-testimonial-border-color: rgba(255, 255, 255, 0.12);
+  --cardcard-testimonial-box-shadow: rgba(0, 0, 0, 0.5);
+  --get-anki-text-color: white;
+  --hamburger-span-color: rgba(255, 255, 255, 0.8);
+  --download-container-already: #e0e0e0;
+  --inline-popover-color: #2a2a2a;
+  --inline-popover-open-border-color: rgba(255, 255, 255, 0.25);
+  --inline-popover-open-box-shadow: rgba(0, 0, 0, 0.6);
+  --800px-menu-bg-color: rgba(20, 60, 95, 0.98);
+  --800px-menu-box-shadow: rgba(0, 0, 0, 0.5);
+  --text-color: #e8e8e8;
+  --download-anki-bg-color: #1e1e1e;
+  --link-color: #6cb4ee;
+  --link-color-visited: #b09cd8;
 }
 
 body {
@@ -32,6 +60,16 @@ body {
   font-weight: 200;
   font-style: normal;
   background-color: var(--body-bg-color);
+  color: var(--text-color);
+}
+
+/* Global link color — readable in both light and dark mode */
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-color-visited);
 }
 
 header,
@@ -76,7 +114,8 @@ menu {
   align-content: center;
 }
 
-menu a {
+menu a,
+menu a:visited {
   text-decoration: none;
   padding: 16px;
   color: var(--menu-link-color);
@@ -201,10 +240,16 @@ footer img {
 }
 
 .download-anki {
-  background-color: black;
+  background-color: var(--download-anki-bg-color);
   color: var(--get-anki-text-color);
   font-weight: 300;
   border-radius: 6px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+html[data-theme="dark"] .download-anki {
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .github-logo {
@@ -378,17 +423,19 @@ header {
   margin-top: 6px;
 }
 
-/* Download button styles */
+/* Download button styles — sized to match Google Play badge (189 × 56) */
 .download-anki-button {
   height: 56px;
+  min-width: 189px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   gap: 10px;
   width: fit-content;
-  padding: 0 8px;
+  padding: 0 12px;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .download-anki-button-text {
@@ -434,6 +481,67 @@ header {
 .footer-links {
   display: flex;
   gap: 0.75em;
+  align-items: center;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* Theme switcher — styled to match the footer links (Terms, Privacy Policy) */
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: var(--text-color);
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.theme-label-light {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-label-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-label-light {
+  display: inline;
+}
+
+/* Adapt SVGs with hardcoded fills for dark mode */
+html[data-theme="dark"] .point-img-device-templates {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+html[data-theme="dark"] .point-img-globe,
+html[data-theme="dark"] .point-img-intervals {
+  filter: invert(0.88) hue-rotate(180deg);
 }
 
 /* References section */
@@ -457,11 +565,13 @@ header {
   max-width: 24rem;
   padding: 12px;
   background-color: var(--inline-popover-color);
+  color: var(--text-color);
   text-wrap: pretty;
 }
 
 .inline-popover a {
   margin-top: 6px;
+  color: var(--link-color);
 }
 
 .inline-popover:popover-open {
@@ -525,7 +635,7 @@ span[popovertarget] {
   menu a {
     display: block;
     padding: 16px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
   }
 
   .menu-toggle:checked ~ menu {

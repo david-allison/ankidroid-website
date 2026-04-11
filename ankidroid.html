@@ -55,6 +55,18 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = stored || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -231,7 +243,7 @@
                   alt="Infographic showing the time between flashcard reviews increasing. It takes 3 reviews to move from an interval of 2 days to 5.4 months"
                   height="299"
                   width="434"
-                  class="point-img"
+                  class="point-img point-img-intervals"
                 />
                 <figcaption>Study only when you need to</figcaption>
               </figure>
@@ -338,7 +350,7 @@
                 width="150"
                 height="150"
                 alt=""
-                class="hide-on-mobile point-img-periphery point-img"
+                class="hide-on-mobile point-img-periphery point-img point-img-globe"
               />
             </div>
           </div>
@@ -525,6 +537,16 @@
             href="https://github.com/ankidroid/Anki-Android/wiki/Privacy-Policy"
             >Privacy Policy</a
           >
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <span class="theme-label-dark">Dark mode</span
+            ><span class="theme-label-light">Light mode</span>
+          </button>
           <a href="https://github.com/ankidroid/Anki-Android"
             ><img
               src="assets/github-mark.svg"
