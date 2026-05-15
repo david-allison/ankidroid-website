@@ -49,6 +49,15 @@ header {
   font-size: x-large;
 }
 
+.header-home-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.beforeTheFold.credits-intro {
+  padding-bottom: 0;
+}
+
 main {
   text-align: center;
 }
