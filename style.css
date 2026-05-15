@@ -258,6 +258,8 @@ footer div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
 }
 
 .cardcard {
@@ -909,5 +911,23 @@ span[popovertarget] {
   .img-block {
     margin-top: 0;
     padding-bottom: 0;
+  }
+}
+
+/* Switch the footer to a centred column at the point where its single-row
+   content would otherwise wrap. CSS can't detect wrap, so this width is a
+   measured approximation of the natural wrap point. */
+@media (max-width: 850px) {
+  footer > div {
+    flex-direction: column;
+  }
+
+  footer > div > div:first-child {
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
