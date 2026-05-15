@@ -633,6 +633,10 @@ header {
   align-items: center;
 }
 
+figcaption {
+  text-align: center;
+}
+
 /* Footer styles */
 .footer-links {
   display: flex;
