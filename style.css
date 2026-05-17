@@ -759,6 +759,13 @@ html[data-theme="light"] .point-img-intervals {
   margin-block: 0;
 }
 
+.references-section > a,
+.references-section > .reference-source {
+  display: block;
+  margin: 0;
+  margin-inline-start: 40px;
+}
+
 /* Inline reference popover styles */
 .inline-popover {
   position: absolute;
