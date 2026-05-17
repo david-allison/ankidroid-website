@@ -464,6 +464,13 @@ header {
   position: relative;
 }
 
+header > div,
+.header-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .menu-toggle {
   display: none;
 }
@@ -557,7 +564,7 @@ header {
 }
 
 .ankidroid-logo-img {
-  width: 40px;
+  width: 36px;
   height: auto;
 }
 
