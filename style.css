@@ -741,7 +741,7 @@ html[data-theme="light"] .point-img-intervals {
 /* References section */
 .references-section {
   text-align: left;
-  padding-left: 10%;
+  padding-inline: 10%;
 }
 
 .reference-sup {
