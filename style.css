@@ -1,15 +1,15 @@
 :root {
-  --body-bg-color: rgb(254, 254, 254);
+  --body-bg-color: rgb(250, 250, 250);
   --header-footer-bg-color: rgba(68, 181, 245, 0.5);
   --menu-link-color: black;
   --menu-dl-container-color: black;
   --prefooter-gradient-color: linear-gradient(
-    rgb(254, 254, 254),
+    rgb(250, 250, 250),
     rgba(68, 181, 245, 0.5)
   );
   --before-the-fold-color: linear-gradient(
     rgba(68, 181, 245, 0.5),
-    rgb(254, 254, 254)
+    rgb(250, 250, 250)
   );
   --cardcard-testimonial-bg-color: rgba(255, 255, 255, 0.8);
   --cardcard-testimonial-border-color: rgba(0, 0, 0, 0.12);
@@ -82,17 +82,17 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --body-bg-color: rgb(254, 254, 254);
+  --body-bg-color: rgb(250, 250, 250);
   --header-footer-bg-color: rgba(68, 181, 245, 0.5);
   --menu-link-color: black;
   --menu-dl-container-color: black;
   --prefooter-gradient-color: linear-gradient(
-    rgb(254, 254, 254),
+    rgb(250, 250, 250),
     rgba(68, 181, 245, 0.5)
   );
   --before-the-fold-color: linear-gradient(
     rgba(68, 181, 245, 0.5),
-    rgb(254, 254, 254)
+    rgb(250, 250, 250)
   );
   --cardcard-testimonial-bg-color: rgba(255, 255, 255, 0.8);
   --cardcard-testimonial-border-color: rgba(0, 0, 0, 0.12);
