@@ -509,9 +509,12 @@ header > div,
 .download-container-stats {
   flex-direction: column;
   justify-content: space-between;
-  min-height: 130px;
   padding-left: 12px;
   padding-right: 12px;
+}
+
+.cardcard-spacing .download-container-stats {
+  min-height: 130px;
 }
 
 .download-container-already {
