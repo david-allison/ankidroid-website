@@ -552,7 +552,7 @@ header > div,
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 clamp(12px, 2vw, 24px);
 }
 
 .download-item-block > a,
